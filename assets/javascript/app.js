@@ -40,9 +40,25 @@ var unansweredQuestion = 0;
 
 //FUNCTIONS====================================================================
 
+//Reset function for the start of new game, loading the page, and when the game is over.
+
 function initializeTriviaGame() {
 
-    
+    answersCorrect = 0;
+    answersWrong = 0;
+    unansweredQuestion = 0;
+
+    //Somewhere in here I need to have the timer reset setTimer function, acutally I just need to call the function inside here. But will come back to the timer later in the process
+
 
 
 }
+
+
+//On click for the start button, will call the initializeTriviaGame function here. Checked console, no errors. (10/2/19) 8:43 PM ET.
+
+$("#start-game").on("click", function(){
+
+    initializeTriviaGame ();
+
+});
