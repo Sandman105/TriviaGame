@@ -9,3 +9,6 @@ h1 {
 div {
     font-family: 'Mukta', sans-serif;
 }
+.btn {
+    border: 2px solid black;
+}

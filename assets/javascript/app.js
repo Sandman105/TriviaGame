@@ -17,6 +17,8 @@
 
 // 9.) Could do added features if possible, speed up timer as you get closer to the end of the questions. So a setTimer at different stages, after 3 questions, speed up?
 
+// 10.) Populate the HTML elements dynamically using jQuery with the questions and answers so each time you start the game it randomizes the questions.
+
 
 
 
@@ -29,36 +31,109 @@
 
 //So some global variables
 
-var answersCorrect = 0;
-var answersWrong = 0;
-var unansweredQuestion = 0;
+$(document).ready(function () {
+
+    var answersCorrect = 0;
+    var answersWrong = 0;
+    var unansweredQuestion = 0;
+    var gameTriviaQuestions = [
+        {
+        Title: "What is Madeline Kahn's character name in Blazing Saddles?",
+        Colors: ["Empress Nympho", "Victoria Brisbane", "Lili Von Shtupp", "Mrs. White", "Elizabeth"],
+        Correct: "Lili Von Shtupp",
+        },
+        {
+        Title: "What line is this movie from, 'Don't get saucy with me, Bearnaise!'?",
+        Types: ["High Anxiety", "The Producers", "Silent Movie", "History of the World, Part 1", "Life Stinks"],
+        Correct: "History of the World, Part 1",
+        },
+        {
+        Title: "What actor plats the Waco Kid in Blazing Saddles?",
+        Types: ["James Cann", "Robert Shaw", "Ben Vareen", "Gene Wilder","Richard Dreyfuss"],
+        Correct: "Gene Wilder"    
+
+        },
+        {
+        Title: "What actress plays the part of Frau Blücher in Young Frankenstein?",
+        Types: ["Cloris Leachman", "Lori Petty", "Fran Drescher", "Teri Garr", "Gilda Radner"],
+        Correct: "ACloris Leachman"
+        },
+        {
+        Title: "In Spaceballs, the character 'Barf' is played by what actor?",
+        Types: ["Bill Murray", "Eugene Levy", "Christopher Guest", "Chevy Chase", "Garrett Morris"],
+        Correct: "John Candy"
+        },
+    ];
+    
+      
+            
+            
+            
+        
+
+        //The arrangement of the array inside the object/objects seems too messy and naming convention is off.
+
+
+
+
+    
+
+
+
+
+
+    //FUNCTIONS====================================================================
+
+    //Reset function for the start of new game, loading the page, and when the game is over.
+
+    function initializeTriviaGame() {
+
+        answersCorrect = 0;
+        answersWrong = 0;
+        unansweredQuestion = 0;
+        gameTrivia = "";
+
+        //Somewhere in here I need to have the timer reset setTimer function, acutally I just need to call the function inside here. But will come back to the timer later in the process
+
+
+
+    }
+
+
+    //As an EXTRA, after getting game to work, maybe add a math function to randomize the questions everytime game is restarted.
+
+
+
+    //On click for the start button, will call the initializeTriviaGame function here. Checked console, no errors. (10/2/19) 8:43 PM ET.
+
+    $("#done").on("click", function () {
+
+
+
+    });
+
+//Restart game button on the all_done.html page.
+
+$("restart").on("click", function () {
+
+    initializeTriviaGame();
+
+});
+
+//CONDITIONALS=====================================================================
 
 
 
 
 
 
-//FUNCTIONS====================================================================
-
-//Reset function for the start of new game, loading the page, and when the game is over.
-
-function initializeTriviaGame() {
-
-    answersCorrect = 0;
-    answersWrong = 0;
-    unansweredQuestion = 0;
-
-    //Somewhere in here I need to have the timer reset setTimer function, acutally I just need to call the function inside here. But will come back to the timer later in the process
 
 
 
-}
 
 
-//On click for the start button, will call the initializeTriviaGame function here. Checked console, no errors. (10/2/19) 8:43 PM ET.
+//Restart trivia game when page is reloaded
 
-$("#start-game").on("click", function(){
-
-    initializeTriviaGame ();
+initializeTriviaGame();
 
 });
