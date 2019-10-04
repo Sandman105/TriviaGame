@@ -36,49 +36,37 @@ $(document).ready(function () {
     var answersCorrect = 0;
     var answersWrong = 0;
     var unansweredQuestion = 0;
+    var answersTotalCorrect = 0;
+    var answersTotalWrong = 0;
+    var unansweredTotalQuestion = 0;
     var gameTriviaQuestions = [
         {
-        Title: "What is Madeline Kahn's character name in Blazing Saddles?",
-        Colors: ["Empress Nympho", "Victoria Brisbane", "Lili Von Shtupp", "Mrs. White", "Elizabeth"],
-        Correct: "Lili Von Shtupp",
+            question: "What is Madeline Kahn's character name in Blazing Saddles?",
+            choices: ["Empress Nympho", "Victoria Brisbane", "Lili Von Shtupp", "Mrs. White", "Elizabeth"],
+            correct: "Lili Von Shtupp",
         },
         {
-        Title: "What line is this movie from, 'Don't get saucy with me, Bearnaise!'?",
-        Types: ["High Anxiety", "The Producers", "Silent Movie", "History of the World, Part 1", "Life Stinks"],
-        Correct: "History of the World, Part 1",
+            question: "What line is this movie from, 'Don't get saucy with me, Bearnaise!'?",
+            choices: ["High Anxiety", "The Producers", "Silent Movie", "History of the World, Part 1", "Life Stinks"],
+            correct: "History of the World, Part 1",
         },
         {
-        Title: "What actor plats the Waco Kid in Blazing Saddles?",
-        Types: ["James Cann", "Robert Shaw", "Ben Vareen", "Gene Wilder","Richard Dreyfuss"],
-        Correct: "Gene Wilder"    
+            question: "What actor plays the Waco Kid in Blazing Saddles?",
+            choices: ["James Cann", "Robert Shaw", "Ben Vareen", "Gene Wilder", "Richard Dreyfuss"],
+            correct: "Gene Wilder"
 
         },
         {
-        Title: "What actress plays the part of Frau Blücher in Young Frankenstein?",
-        Types: ["Cloris Leachman", "Lori Petty", "Fran Drescher", "Teri Garr", "Gilda Radner"],
-        Correct: "ACloris Leachman"
+            question: "What actress plays the part of Frau Blücher in Young Frankenstein?",
+            choices: ["Cloris Leachman", "Lori Petty", "Fran Drescher", "Teri Garr", "Gilda Radner"],
+            correct: "Cloris Leachman"
         },
         {
-        Title: "In Spaceballs, the character 'Barf' is played by what actor?",
-        Types: ["Bill Murray", "Eugene Levy", "Christopher Guest", "Chevy Chase", "Garrett Morris"],
-        Correct: "John Candy"
+            question: "In Spaceballs, the character 'Barf' is played by what actor?",
+            choices: ["Bill Murray", "Eugene Levy", "Christopher Guest", "Chevy Chase", "Garrett Morris"],
+            correct: "John Candy"
         },
     ];
-    
-      
-            
-            
-            
-        
-
-        //The arrangement of the array inside the object/objects seems too messy and naming convention is off.
-
-
-
-
-    
-
-
 
 
 
@@ -91,7 +79,10 @@ $(document).ready(function () {
         answersCorrect = 0;
         answersWrong = 0;
         unansweredQuestion = 0;
-        gameTrivia = "";
+        answersTotalCorrect = 0;
+        answersTotalWrong = 0;
+        unansweredTotalQuestion = 0;
+        //gameTrivia = "";
 
         //Somewhere in here I need to have the timer reset setTimer function, acutally I just need to call the function inside here. But will come back to the timer later in the process
 
@@ -112,28 +103,37 @@ $(document).ready(function () {
 
     });
 
-//Restart game button on the all_done.html page.
+    //Restart game button on the all_done.html page. May need to not use a second HTML page, might be a little too complex at the moment. Might need to move that container to main index.html.
 
-$("restart").on("click", function () {
+    $("restart").on("click", function () {
+
+        initializeTriviaGame();
+
+    });
+
+    //CONDITIONALS=====================================================================
+
+    if (gameTriviaQuestions.correct[i]) {
+        answersCorrect++;
+        $("total-correct").html(answersTotalCorrect);
+
+    }
+    //Not sure how to state when user answers wrong answer
+    else if () {
+        answersWrong++;
+        $("total-wrong").html(answersTotalWrong);
+    }
+
+
+
+
+
+
+
+
+
+    //Restart trivia game when page is reloaded
 
     initializeTriviaGame();
-
-});
-
-//CONDITIONALS=====================================================================
-
-
-
-
-
-
-
-
-
-
-
-//Restart trivia game when page is reloaded
-
-initializeTriviaGame();
 
 });
