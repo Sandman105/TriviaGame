@@ -46,7 +46,7 @@ $(document).ready(function () {
             correct: "Lili Von Shtupp",
         },
         {
-            question: "What line is this movie from, 'Don't get saucy with me, Bearnaise!'?",
+            question: "What line is this movie from, ' Don't get saucy with me, Bearnaise! '?",
             choices: ["High Anxiety", "The Producers", "Silent Movie", "History of the World, Part 1", "Life Stinks"],
             correct: "History of the World, Part 1",
         },
@@ -84,12 +84,23 @@ $(document).ready(function () {
         unansweredTotalQuestion = 0;
         //gameTrivia = "";
 
-        //Somewhere in here I need to have the timer reset setTimer function, acutally I just need to call the function inside here. But will come back to the timer later in the process
+        //Somewhere in here I need to have the timer reset setTimer function, acutally I just need to call the function inside here. But will come back to the timer later in the process.
 
+        //These are working, displaying on page.
+        $("#question-one").html("1.)" + " " + gameTriviaQuestions[0].question);
+        $("#question-two").html("2.)" + " " + gameTriviaQuestions[1].question);
+        $("#question-three").html("3.)" + " " + gameTriviaQuestions[2].question);
+        $("#question-four").html("4.)" + " " + gameTriviaQuestions[3].question);
+        $("#question-five").html("5.)" + " " + gameTriviaQuestions[4].question);
 
+        //Testing to display question choices, unable to display the index, I can display the same choice five times, but not placing entire index after each button. It's trying to put the entire index on one radio button I beleive.
+        $(".choices-one").text(" " + gameTriviaQuestions[0].choices[i]);
 
     }
 
+    //Now console logs showing after I commented out the incomplete conditionals at the bottom of the page.
+    console.log(gameTriviaQuestions[0].question);
+    console.log("test");
 
     //As an EXTRA, after getting game to work, maybe add a math function to randomize the questions everytime game is restarted.
 
@@ -99,7 +110,7 @@ $(document).ready(function () {
 
     $("#done").on("click", function () {
 
-
+        //Need to have an action here to take to game totals, this is suppose to go to second HTML page, but might need to keep this all one one page. 
 
     });
 
@@ -113,18 +124,27 @@ $(document).ready(function () {
 
     //CONDITIONALS=====================================================================
 
-    if (gameTriviaQuestions.correct[i]) {
-        answersCorrect++;
-        $("total-correct").html(answersTotalCorrect);
+    //if (gameTriviaQuestions.correct[i]) {
+    //    answersCorrect++;
+    //    $("total-correct").html("Correct: " + answersTotalCorrect);
 
-    }
+    //}
     //Not sure how to state when user answers wrong answer
-    else if () {
-        answersWrong++;
-        $("total-wrong").html(answersTotalWrong);
-    }
+    //else if () {
+      //  answersWrong++;
+      //  $("total-wrong").html("Wrong: " + answersTotalWrong);
+    //}
+
+   // else {
+    //    unansweredQuestion++;
+    //    $("total-unanswered").html("Correct: " + unansweredTotalQuestion);
+   // }
 
 
+   //These are not displaying on the all_done.html, i'm missing something, the JS can't see this page.
+    $("#total-correct").html("Correct:  " + answersTotalCorrect);
+    $("#total-wrong").html("Wrong: " + answersTotalWrong);
+    $("#total-unanswered").html("Come on! No response??: " + unansweredTotalQuestion);
 
 
 
