@@ -94,13 +94,30 @@ $(document).ready(function () {
         $("#question-five").html("5.)" + " " + gameTriviaQuestions[4].question);
 
         //Testing to display question choices, unable to display the index, I can display the same choice five times, but not placing entire index after each button. It's trying to put the entire index on one radio button I beleive.
-        $(".choices-one").text(" " + gameTriviaQuestions[0].choices[i]);
+
+        //Need a loop here so go through and display each element on the radio buttons.
+        for (var i = 0; i < gameTriviaQuestions.length; i++) {
+
+            var element = gameTriviaQuestions[i]
+            for (var j = 0; j < element.choices.length; j++) {
+                var result = element.choices[j]
+                //$(".choices-one").text(" " + result);
+                //$(".choice-one").append(`<label class="radio-inline">
+                //<input type="radio" name="optradio">${result}</label>`);
+
+                $(".choices-one").html(result);
+
+
+                console.log(result)
+            }
+    }
 
     }
 
     //Now console logs showing after I commented out the incomplete conditionals at the bottom of the page.
     console.log(gameTriviaQuestions[0].question);
     console.log("test");
+    console.log("--------------------");
 
     //As an EXTRA, after getting game to work, maybe add a math function to randomize the questions everytime game is restarted.
 
