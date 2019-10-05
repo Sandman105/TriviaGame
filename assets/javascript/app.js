@@ -116,11 +116,11 @@ $(document).ready(function () {
                 else if (i === 2) {
                     $($(".choices-three")[j]).append(result);
                 }
-                
+
                 else if (i === 3) {
                     $($(".choices-four")[j]).append(result);
                 }
-                
+
                 else if (i === 4) {
                     $($(".choices-five")[j]).append(result);
                 }
@@ -130,7 +130,7 @@ $(document).ready(function () {
 
                 console.log(result)
             }
-    }
+        }
 
     }
 
@@ -148,6 +148,23 @@ $(document).ready(function () {
     $("#done").on("click", function () {
 
         //Need to have an action here to take to game totals, this is suppose to go to second HTML page, but might need to keep this all one one page. 
+        if (gameTriviaQuestions.correct[i]) {
+            answersCorrect++;
+            $("total-correct").html("Correct: " + answersTotalCorrect);
+
+        }
+        //Not sure how to state when user answers wrong answer
+        else if (!gameTriviaQuestions.correct[i]) {
+            answersWrong++;
+            $("total-wrong").html("Wrong: " + answersTotalWrong);
+        }
+
+        else {
+            unansweredQuestion++;
+            $("total-unanswered").html("Correct: " + unansweredTotalQuestion);
+        }
+
+
 
     });
 
@@ -161,27 +178,13 @@ $(document).ready(function () {
 
     //CONDITIONALS=====================================================================
 
-    //if (gameTriviaQuestions.correct[i]) {
-    //    answersCorrect++;
-    //    $("total-correct").html("Correct: " + answersTotalCorrect);
-
-    //}
-    //Not sure how to state when user answers wrong answer
-    //else if () {
-      //  answersWrong++;
-      //  $("total-wrong").html("Wrong: " + answersTotalWrong);
-    //}
-
-   // else {
-    //    unansweredQuestion++;
-    //    $("total-unanswered").html("Correct: " + unansweredTotalQuestion);
-   // }
 
 
-   //These are not displaying on the all_done.html, i'm missing something, the JS can't see this page.
-    $("#total-correct").html("Correct:  " + answersTotalCorrect);
-    $("#total-wrong").html("Wrong: " + answersTotalWrong);
-    $("#total-unanswered").html("Come on! No response??: " + unansweredTotalQuestion);
+
+    //These are not displaying on the all_done.html, i'm missing something, the JS can't see this page.
+    //$("#total-correct").html("Correct:  " + answersTotalCorrect);
+    //$("#total-wrong").html("Wrong: " + answersTotalWrong);
+    //$("#total-unanswered").html("Come on! No response??: " + unansweredTotalQuestion);
 
 
 
