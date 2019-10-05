@@ -63,7 +63,7 @@ $(document).ready(function () {
         },
         {
             question: "In Spaceballs, the character 'Barf' is played by what actor?",
-            choices: ["Bill Murray", "Eugene Levy", "Christopher Guest", "Chevy Chase", "Garrett Morris"],
+            choices: ["Bill Murray", "Eugene Levy", "Christopher Guest", "John Candy", "Garrett Morris"],
             correct: "John Candy"
         },
     ];
@@ -104,8 +104,28 @@ $(document).ready(function () {
                 //$(".choices-one").text(" " + result);
                 //$(".choice-one").append(`<label class="radio-inline">
                 //<input type="radio" name="optradio">${result}</label>`);
+                if (i === 0) {
+                    //$$ turned jQuery into an Object, need to read more about that!
+                    $($(".choices-one")[j]).text(result);
+                }
 
-                $(".choices-one").html(result);
+                else if (i === 1) {
+                    $($(".choices-two")[j]).html(result);
+                }
+
+                else if (i === 2) {
+                    $($(".choices-three")[j]).html(result);
+                }
+                
+                else if (i === 3) {
+                    $($(".choices-four")[j]).html(result);
+                }
+                
+                else if (i === 4) {
+                    $($(".choices-five")[j]).html(result);
+                }
+                console.log($(".choices-one")[j]);
+                console.log(0);
 
 
                 console.log(result)
