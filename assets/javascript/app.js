@@ -106,23 +106,23 @@ $(document).ready(function () {
                 //<input type="radio" name="optradio">${result}</label>`);
                 if (i === 0) {
                     //$$ turned jQuery into an Object, need to read more about that!
-                    $($(".choices-one")[j]).text(result);
+                    $($(".choices-one")[j]).append(result);
                 }
 
                 else if (i === 1) {
-                    $($(".choices-two")[j]).html(result);
+                    $($(".choices-two")[j]).append(result);
                 }
 
                 else if (i === 2) {
-                    $($(".choices-three")[j]).html(result);
+                    $($(".choices-three")[j]).append(result);
                 }
                 
                 else if (i === 3) {
-                    $($(".choices-four")[j]).html(result);
+                    $($(".choices-four")[j]).append(result);
                 }
                 
                 else if (i === 4) {
-                    $($(".choices-five")[j]).html(result);
+                    $($(".choices-five")[j]).append(result);
                 }
                 console.log($(".choices-one")[j]);
                 console.log(0);
